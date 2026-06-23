@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>How to Make Sept '26 Your Last Attempt — FOCAS Edu</title>
+<style>
+  :root{
+    --navy:#0f2540;
+    --navy-light:#16365c;
+    --gold:#c79a3c;
+    --gold-light:#e6c469;
+    --bg:#f7f5f0;
+    --card:#ffffff;
+    --text:#222222;
+    --muted:#5a5a5a;
+    --g1:#1f6f5c;
+    --g2:#a13d3d;
+    --both:#5b3a8c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.55;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 80px;}
+  header.hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+    color:#fff;
+    padding:56px 24px 64px;
+    text-align:center;
+  }
+  header.hero .brand{
+    margin-bottom:18px;
+  }
+  header.hero .brand img{
+    height:64px;
+    width:auto;
+    background:#fff;
+    border-radius:10px;
+    padding:6px 12px;
+    display:block;
+    margin:0 auto;
+  }
+  header.hero h1{
+    font-size:34px;
+    margin:0 0 14px;
+    line-height:1.25;
+  }
+  header.hero h1 span{color:var(--gold-light);}
+  header.hero p{
+    font-size:16px;
+    color:#dbe3ee;
+    max-width:600px;
+    margin:0 auto;
+  }
+  .section{
+    background:var(--card);
+    border-radius:14px;
+    padding:32px 32px;
+    margin-top:-30px;
+    margin-bottom:28px;
+    box-shadow:0 4px 18px rgba(15,37,64,0.08);
+    position:relative;
+  }
+  .section:first-of-type{margin-top:-40px;}
+  h2.section-title{
+    font-size:22px;
+    color:var(--navy);
+    margin:0 0 6px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2.section-title .num{
+    background:var(--navy);
+    color:#fff;
+    width:32px;height:32px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;justify-content:center;
+    font-size:15px;
+    flex-shrink:0;
+  }
+  .subtitle{color:var(--muted);font-size:14.5px;margin:0 0 20px;}
+  .step-block{margin-bottom:22px;}
+  .step-block h3{
+    font-size:17px;
+    color:var(--navy-light);
+    margin:0 0 6px;
+  }
+  .step-block p{margin:0 0 4px;font-size:15px;color:var(--text);}
+  ul.clean{padding-left:20px;margin:6px 0;}
+  ul.clean li{margin-bottom:6px;font-size:15px;}
+  .callout{
+    border-left:4px solid var(--gold);
+    background:#fbf6ea;
+    padding:14px 18px;
+    border-radius:8px;
+    font-size:14.5px;
+    margin:14px 0;
+    color:#4a3a14;
+  }
+  .cta-box{
+    margin-top:18px;
+    background:var(--navy);
+    border-radius:10px;
+    padding:20px 22px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .cta-box .info{flex:1;min-width:220px;}
+  .cta-box .info strong{display:block;font-size:15.5px;margin-bottom:3px;color:var(--gold-light);}
+  .cta-box .info span{font-size:13.5px;color:#cdd7e5;}
+  .btn{
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    padding:11px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+    white-space:nowrap;
+    display:inline-block;
+    transition:background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn:hover{
+    background:#e6b800;
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(0,0,0,0.18);
+  }
+  .btn.btn-whatsapp{
+    background:#128C7E;
+    color:#fff;
+    display:inline-flex;
+    align-items:center;
+  }
+  .btn.btn-whatsapp:hover{
+    background:#075E54;
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .btn.outline{
+    background:transparent;
+    border:1.5px solid var(--gold-light);
+    color:var(--gold-light);
+  }
+  .placeholder-tag{
+    display:inline-block;
+    font-size:11px;
+    background:#eee;
+    color:#888;
+    padding:2px 8px;
+    border-radius:5px;
+    margin-left:6px;
+    vertical-align:middle;
+  }
+  .formula{
+    background:var(--bg);
+    border-radius:8px;
+    padding:14px 18px;
+    font-size:14.5px;
+    margin:10px 0;
+    border:1px dashed #cfc6b0;
+  }
+  table.hours{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0;
+    font-size:14px;
+  }
+  table.hours th, table.hours td{
+    border:1px solid #e2ddd2;
+    padding:9px 10px;
+    text-align:left;
+  }
+  table.hours th{background:var(--navy);color:#fff;font-weight:600;}
+  table.hours tr:nth-child(even){background:#faf8f3;}
+  .tabs-note{
+    font-size:13.5px;
+    color:var(--muted);
+    margin-bottom:14px;
+    font-style:italic;
+  }
+  .plan-card{
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:26px;
+    border:1.5px solid #e6e2d6;
+  }
+  .plan-card.g1{border-color:var(--g1);background:#f4f9f7;}
+  .plan-card.g2{border-color:var(--g2);background:#fbf3f3;}
+  .plan-card.both{border-color:var(--both);background:#f7f3fb;}
+  .plan-card h3{
+    margin:0 0 4px;
+    font-size:18px;
+  }
+  .plan-card.g1 h3{color:var(--g1);}
+  .plan-card.g2 h3{color:var(--g2);}
+  .plan-card.both h3{color:var(--both);}
+  .plan-card .plan-note{font-size:13.5px;color:var(--muted);margin-bottom:14px;}
+  table.plan{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  table.plan th, table.plan td{
+    border:1px solid #e6e2d6;
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.plan th{background:var(--navy);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px;}
+  table.plan td.day{font-weight:700;color:var(--navy);white-space:nowrap;}
+  table.plan tr.milestone td{background:#fdf6e3;font-weight:600;}
+  .checklist{
+    list-style:none;
+    padding:0;
+    margin:8px 0;
+  }
+  .checklist li{
+    padding:7px 0 7px 28px;
+    position:relative;
+    font-size:14.5px;
+    border-bottom:1px solid #f0ece1;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:7px;
+    color:var(--g1);
+    font-weight:700;
+  }
+  footer{
+    text-align:center;
+    padding:30px 20px 10px;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .closing{
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);
+    color:var(--navy);
+    border-radius:14px;
+    padding:34px 32px;
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .closing h2{margin:0 0 10px;font-size:24px;}
+  .closing p{margin:0 auto 16px;max-width:560px;font-size:15px;}
+  @media (max-width:600px){
+    header.hero{padding:44px 18px 56px;}
+    header.hero h1{font-size:26px;}
+    .section{padding:24px 18px;}
+    .cta-box{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="brand">
+    <img src="https://res.cloudinary.com/dvfybzpcd/image/upload/q_auto/f_auto/v1781520435/WhatsApp_Image_2026-06-15_at_16.16.15_ptjv9w.jpg" alt="FOCAS Edu">
+  </div>
+  <h1>How to Make <span>Sept '26</span><br>Your Last CA Inter Attempt</h1>
+  <p>A practical comeback guide for students who didn't clear May '26 — built around what actually changes the outcome the second time around.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="callout" style="margin-top:-10px;">
+    If you're reading this within a week of your result, good. The first two weeks after a result decide more than people realise — not because of anything magical, but because this is when most students either drift into denial/avoidance, or quietly start the next attempt with a clear head. This guide is built for the second path.
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">1</span>Reflect on Your Mistakes</h2>
+    <p class="subtitle">Before you open a single book again, understand exactly why the last attempt didn't work. Repeating without this step usually means repeating the same mistakes.</p>
+
+    <div class="step-block">
+      <h3>Apply for RTI on your answer sheets</h3>
+      <p>Your evaluated copies are the single most underused resource after a result. RTI shows you exactly where marks were lost — presentation, working notes, step-marking, or genuine knowledge gaps. Don't guess what went wrong; read it off the paper.</p>
+    </div>
+
+    <div class="cta-box">
+      <div class="info">
+        <strong>FOCAS Edu RTI Day — Chennai</strong>
+        <span>August 2nd · Walk-in help with RTI applications, fee, and reading your evaluated copies with a mentor on the spot.</span>
+      </div>
+      <a href="https://focasedu.com/rti" class="btn">Register for RTI Day →</a>
+    </div>
+
+    <div class="step-block" style="margin-top:20px;">
+      <h3>Evaluate your previous preparation honestly</h3>
+      <ul class="clean">
+        <li>Did you finish the syllabus before the exam, or were you still covering new chapters in the last 10 days?</li>
+        <li>How many full mock tests did you write under exam conditions before the actual exam?</li>
+        <li>Were your low scores from weak concepts, weak presentation, or weak time management in the exam hall?</li>
+        <li>Which paper(s) pulled your aggregate down — was it one weak paper or an across-the-board shortfall?</li>
+      </ul>
+    </div>
+
+    <div class="step-block">
+      <h3>See what successful students actually do differently</h3>
+      <p>Talk to 2–3 people who cleared this attempt. Almost always it isn't "smarter," it's: fewer new resources, more revision cycles, more written mock tests, and a fixed daily routine they didn't break. Borrow the routine, not the resources.</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">2</span>Make the Group Decision</h2>
+    <p class="subtitle">This is the most consequential decision you'll make this attempt — and it should be made on hours available, not on emotion.</p>
+
+    <div class="formula">
+      <strong>The maths that matters:</strong><br>
+      First attempt at a paper ≈ 120–180 hours of preparation.<br>
+      Repeat attempt at the same paper ≈ 60–80 hours — <em>but only if you treat it as starting from zero.</em> The clock resets every attempt; partial memory from May is not a shortcut.
+    </div>
+
+    <table class="hours">
+      <tr>
+        <th rowspan="2">Scenario</th>
+        <th colspan="2">First timer (120–180 hrs/subject)</th>
+        <th colspan="2">Repeater (60–80 hrs/subject)</th>
+      </tr>
+      <tr>
+        <th>Total hours</th><th>Hrs/day*</th>
+        <th>Total hours</th><th>Hrs/day*</th>
+      </tr>
+      <tr><td>Group 1 only</td><td>360–540 hrs</td><td>~8–10 hrs/day</td><td>180–240 hrs</td><td>~6–8 hrs/day</td></tr>
+      <tr><td>Group 2 only</td><td>360–540 hrs</td><td>~8–10 hrs/day</td><td>180–240 hrs</td><td>~6–8 hrs/day</td></tr>
+      <tr><td>Both Groups</td><td>720–1,080 hrs</td><td>~12–14 hrs/day</td><td>360–480 hrs</td><td>~10–12 hrs/day</td></tr>
+    </table>
+    <p class="tabs-note">*Sept '26 attempt gives roughly 10–11 weeks of effective prep time from late June. Adjust the daily number based on your actual exam-day calendar, working/articleship hours, and college schedule.</p>
+
+    <p style="font-size:15px;">Be honest about the hours you can <em>realistically</em> commit on a normal day, not your best day. Decide one of three paths and commit — don't keep re-deciding every week:</p>
+    <ul class="clean">
+      <li><strong>Group 1 only</strong> — Advanced Accounting, Corporate &amp; Other Laws, Taxation</li>
+      <li><strong>Group 2 only</strong> — Cost &amp; Management Accounting, Auditing &amp; Ethics, Financial Management &amp; Strategic Management</li>
+      <li><strong>Both Groups</strong> — all six papers in one attempt</li>
+    </ul>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">3</span>Start Solving Now</h2>
+    <p class="subtitle">Reading and re-reading chapters feels productive but doesn't build exam fitness. Writing does. Start within the first week — not after "one more revision round."</p>
+
+    <ul class="clean">
+      <li>Pick up the question bank / RTP / MTP for each paper and start solving daily, even before your revision is "complete."</li>
+      <li>Write at least one full 3-hour mock under exam conditions every week from week 3 onward — same timing, same pressure, no phone.</li>
+      <li>Get every mock evaluated or self-evaluate strictly against the ICAI suggested answers, not just "I knew this."</li>
+    </ul>
+
+    <div class="cta-box" style="background:var(--navy-light);">
+      <div class="info">
+        <strong>Last Attempt Workout Batch — ₹10,000</strong>
+        <span>Less than 150 hours of selected coverage in a limited time to make you exam-ready. Dedicated tutors, personalized feedback, and a structured plan — every step of the way.</span>
+      </div>
+      <a href="#" class="btn outline" onclick="document.getElementById('workoutModal').style.display='flex';return false;">Know More →</a>
+    </div>
+  </div>
+
+  <!-- 14 DAY PLANS -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">4</span>Your First 14 Days — Sample Plan</h2>
+    <p class="subtitle">This is <strong>Phase 1 only</strong> — a diagnostic-and-foundation sprint, not the full syllabus. The goal of these 14 days is to stop drifting, get a real baseline, and build the daily habit before the full 10-week plan kicks in. Pick the track that matches your Step 2 decision.</p>
+
+    <!-- GROUP 1 -->
+    <div class="plan-card g1">
+      <h3>Track A — Group 1 Only</h3>
+      <p class="plan-note">Advanced Accounting (AA) · Corporate &amp; Other Laws (Law) · Taxation (Tax) — roughly 2–2.5 hrs/day</p>
+      <table class="plan">
+        <tr><th>Day</th><th>Subject</th><th>Focus</th></tr>
+        <tr><td class="day">Day 1</td><td>Tax</td><td>Re-read RTI copy + list every topic that cost you marks. Start GST basics revision.</td></tr>
+        <tr><td class="day">Day 2</td><td>AA</td><td>Revise Amalgamation/Internal Reconstruction — solve 5 problems from question bank.</td></tr>
+        <tr><td class="day">Day 3</td><td>Law</td><td>Companies Act — Sections on Incorporation &amp; Share Capital, MCQ practice.</td></tr>
+        <tr><td class="day">Day 4</td><td>Tax</td><td>Income from House Property + Capital Gains — solve practical problems.</td></tr>
+        <tr><td class="day">Day 5</td><td>AA</td><td>Buyback &amp; Underwriting — concept revision + 5 problems.</td></tr>
+        <tr><td class="day">Day 6</td><td>Law</td><td>LLP Act + General Clauses Act — short notes + MCQs.</td></tr>
+        <tr class="milestone"><td class="day">Day 7</td><td>Mock</td><td>Write one full paper (your weakest subject) under timed conditions. Self-evaluate against answer key.</td></tr>
+        <tr><td class="day">Day 8</td><td>Tax</td><td>GST — Input Tax Credit &amp; Registration, practical problems.</td></tr>
+        <tr><td class="day">Day 9</td><td>AA</td><td>Consolidated Financial Statements — start, don't aim to finish in one day.</td></tr>
+        <tr><td class="day">Day 10</td><td>Law</td><td>Corporate Secretarial Practice + MCQ revision of Day 3 &amp; 6 topics.</td></tr>
+        <tr><td class="day">Day 11</td><td>Tax</td><td>Revise all of Day 1, 4, 8 — consolidate into one summary sheet.</td></tr>
+        <tr><td class="day">Day 12</td><td>AA</td><td>Continue Consolidated FS + solve 5 problems.</td></tr>
+        <tr><td class="day">Day 13</td><td>Law</td><td>Revise full Law portion covered so far via MCQs only.</td></tr>
+        <tr class="milestone"><td class="day">Day 14</td><td>Mock + Review</td><td>Second full mock (different subject) + sit down and plan Weeks 3–10 based on what's still weak.</td></tr>
+      </table>
+    </div>
+
+    <!-- GROUP 2 -->
+    <div class="plan-card g2">
+      <h3>Track B — Group 2 Only</h3>
+      <p class="plan-note">Cost &amp; Management Accounting (CMA) · Auditing &amp; Ethics (Audit) · Financial Management &amp; Strategic Management (FM-SM) — roughly 2–2.5 hrs/day</p>
+      <table class="plan">
+        <tr><th>Day</th><th>Subject</th><th>Focus</th></tr>
+        <tr><td class="day">Day 1</td><td>Audit</td><td>Re-read RTI copy. Revise Audit Documentation &amp; Audit Evidence (SA 230, SA 500).</td></tr>
+        <tr><td class="day">Day 2</td><td>CMA</td><td>Cost Sheet &amp; Material Cost — solve 8–10 numericals.</td></tr>
+        <tr><td class="day">Day 3</td><td>FM-SM</td><td>Ratio Analysis + Time Value of Money — concept + problems.</td></tr>
+        <tr><td class="day">Day 4</td><td>Audit</td><td>Audit of Items of Financial Statements — short notes, practice case-MCQs.</td></tr>
+        <tr><td class="day">Day 5</td><td>CMA</td><td>Labour &amp; Overheads — numericals + theory recap.</td></tr>
+        <tr><td class="day">Day 6</td><td>FM-SM</td><td>Capital Budgeting — NPV/IRR problems.</td></tr>
+        <tr class="milestone"><td class="day">Day 7</td><td>Mock</td><td>Write one full paper (weakest subject) under timed conditions. Self-evaluate.</td></tr>
+        <tr><td class="day">Day 8</td><td>Audit</td><td>Internal Control &amp; Internal Audit — theory + case scenarios.</td></tr>
+        <tr><td class="day">Day 9</td><td>CMA</td><td>Standard Costing — variance analysis problems.</td></tr>
+        <tr><td class="day">Day 10</td><td>FM-SM</td><td>Cost of Capital + Leverage — problems.</td></tr>
+        <tr><td class="day">Day 11</td><td>Audit</td><td>Revise Day 1, 4, 8 topics — consolidate into a summary sheet.</td></tr>
+        <tr><td class="day">Day 12</td><td>CMA</td><td>Marginal Costing — break-even &amp; decision-making problems.</td></tr>
+        <tr><td class="day">Day 13</td><td>FM-SM</td><td>Strategic Management — Unit 1 &amp; 2 theory, short-answer practice.</td></tr>
+        <tr class="milestone"><td class="day">Day 14</td><td>Mock + Review</td><td>Second full mock (different subject) + plan Weeks 3–10 based on weak areas.</td></tr>
+      </table>
+    </div>
+
+    <!-- BOTH GROUPS -->
+    <div class="plan-card both">
+      <h3>Track C — Both Groups</h3>
+      <p class="plan-note">All six papers — roughly 4.5–5.5 hrs/day. With six papers, 14 days is purely a kickoff: a light first pass on each subject plus one diagnostic mock, so don't expect deep coverage yet.</p>
+      <table class="plan">
+        <tr><th>Day</th><th>Subject</th><th>Focus</th></tr>
+        <tr><td class="day">Day 1</td><td>Tax + CMA</td><td>RTI review. Tax: GST basics. CMA: Cost Sheet numericals.</td></tr>
+        <tr><td class="day">Day 2</td><td>AA + Audit</td><td>AA: Amalgamation revision. Audit: SA 230 &amp; 500 short notes.</td></tr>
+        <tr><td class="day">Day 3</td><td>Law + FM-SM</td><td>Law: Companies Act incorporation. FM-SM: Ratio Analysis problems.</td></tr>
+        <tr><td class="day">Day 4</td><td>Tax + CMA</td><td>Tax: Capital Gains problems. CMA: Material &amp; Labour Cost.</td></tr>
+        <tr><td class="day">Day 5</td><td>AA + Audit</td><td>AA: Buyback &amp; Underwriting. Audit: Internal Control basics.</td></tr>
+        <tr><td class="day">Day 6</td><td>Law + FM-SM</td><td>Law: LLP Act. FM-SM: Capital Budgeting (NPV/IRR).</td></tr>
+        <tr class="milestone"><td class="day">Day 7</td><td>Mock</td><td>One full paper from your weakest subject overall. Evaluate honestly.</td></tr>
+        <tr><td class="day">Day 8</td><td>Tax + CMA</td><td>Tax: GST ITC &amp; Registration. CMA: Overheads.</td></tr>
+        <tr><td class="day">Day 9</td><td>AA + Audit</td><td>AA: Start Consolidated FS. Audit: Audit Evidence case-MCQs.</td></tr>
+        <tr><td class="day">Day 10</td><td>Law + FM-SM</td><td>Law: Corporate Secretarial Practice. FM-SM: Cost of Capital.</td></tr>
+        <tr><td class="day">Day 11</td><td>Tax + CMA</td><td>Revise Days 1, 4, 8 (Tax &amp; CMA) — build summary sheets.</td></tr>
+        <tr><td class="day">Day 12</td><td>AA + Audit</td><td>Revise Days 2, 5, 9 (AA &amp; Audit) — build summary sheets.</td></tr>
+        <tr><td class="day">Day 13</td><td>Law + FM-SM</td><td>Revise Days 3, 6, 10 (Law &amp; FM-SM) — build summary sheets.</td></tr>
+        <tr class="milestone"><td class="day">Day 14</td><td>Mock + Review</td><td>Second full mock (different subject) + map the remaining 9 weeks paper-by-paper.</td></tr>
+      </table>
+    </div>
+
+    <div class="callout">
+      Rule for all three tracks: don't skip the Day 7 and Day 14 mocks even if you feel "not ready." The point of these early mocks isn't a good score — it's an honest baseline to plan the next 9–10 weeks against.
+    </div>
+  </div>
+
+  <!-- WHOLESOME WRAP -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">5</span>Making This Attempt Different</h2>
+    <p class="subtitle">A study plan alone doesn't change outcomes — the habits around it usually do.</p>
+    <ul class="checklist">
+      <li>Tell one person your group decision and your weekly target out loud — accountability beats willpower.</li>
+      <li>Protect sleep and one full off-block per week; burnout in week 4 costs more than it saves in week 1.</li>
+      <li>Track attempts, not hours — "3 mocks written" is a better weekly metric than "20 hours studied."</li>
+      <li>Revisit your RTI findings every 3 weeks — check if the same mistake is creeping back in.</li>
+      <li>Join a structured group (workout batch, study group, or mentor check-ins) — preparing for a repeat attempt alone is the single biggest risk factor for drifting.</li>
+      <li>Treat May '26 as data, not identity. One attempt's result describes a result, not your ability to clear CA Inter.</li>
+    </ul>
+  </div>
+
+  <div class="closing">
+    <h2>Make Sept '26 the last time you have to plan one of these.</h2>
+    <p>Decide your group this week, start solving this week, and let the next 10 weeks run on a plan instead of panic.</p>
+    <a href="https://wa.me/916383514285" target="_blank" class="btn btn-whatsapp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:8px;flex-shrink:0;">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Talk to a FOCAS Edu Mentor
+    </a>
+    <button id="shareBtn" class="btn" style="background:transparent;border:2px solid var(--navy);color:var(--navy);margin-top:12px;cursor:pointer;font-weight:700;">
+      &#128279; Share this Guide
+    </button>
+  </div>
+
+</div>
+
+<footer>
+  FOCAS Edu · Built for the CA Inter Sept '26 batch · Last updated June 2026
+</footer>
+
+<!-- Workout Batch Modal -->
+<div id="workoutModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border-radius:14px;max-width:520px;width:100%;padding:36px 32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <button onclick="document.getElementById('workoutModal').style.display='none';" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;cursor:pointer;color:#666;line-height:1;">&#x2715;</button>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+      <div style="background:var(--navy);color:var(--gold-light);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Workout Batch</div>
+      <div style="background:#e8f5e9;color:#2e7d32;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">₹10,000 per group</div>
+    </div>
+    <h2 style="font-size:22px;color:var(--navy);margin:0 0 8px;line-height:1.3;">Last Attempt Workout Batch</h2>
+    <p style="color:#555;font-size:14px;margin:0 0 22px;line-height:1.6;">For students joining after results or in the last month — a focused, high-intensity batch designed to make you exam-ready fast.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px;">
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#333;line-height:1.5;">
+        <span style="color:#2e7d32;font-weight:900;margin-top:1px;">✓</span>
+        <span><strong>Under 150 hours</strong> of selected coverage — only what matters for the exam.</span>
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#333;line-height:1.5;">
+        <span style="color:#2e7d32;font-weight:900;margin-top:1px;">✓</span>
+        <span>Tutor sits with you and <strong>works out questions live</strong> — not just lectures, actual problem-solving together.</span>
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#333;line-height:1.5;">
+        <span style="color:#2e7d32;font-weight:900;margin-top:1px;">✓</span>
+        <span>Focus on <strong>important topics in a guided manner</strong> — no time wasted on low-yield content.</span>
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#333;line-height:1.5;">
+        <span style="color:#2e7d32;font-weight:900;margin-top:1px;">✓</span>
+        <span><strong>Dedicated tutors with personalized feedback</strong> every step of the way.</span>
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#333;line-height:1.5;">
+        <span style="color:#2e7d32;font-weight:900;margin-top:1px;">✓</span>
+        <span><strong>Under 10 hours a day</strong> with a structured plan — focused, not exhausting.</span>
+      </li>
+    </ul>
+    <div style="background:var(--navy);color:#fff;border-radius:10px;padding:16px 20px;text-align:center;margin-bottom:20px;">
+      <div style="font-size:13px;color:var(--gold-light);letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:4px;">Let's make this your last attempt</div>
+      <div style="font-size:15px;line-height:1.5;">Revise like never before with FOCAS Edu.</div>
+    </div>
+    <a href="https://focasedu.com/rti" style="display:block;text-align:center;background:var(--gold);color:var(--navy);font-weight:700;padding:13px 22px;border-radius:8px;text-decoration:none;font-size:15px;transition:background 0.2s ease;">Enrol Now →</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  // --- Identity from URL ---
+  var params = new URLSearchParams(window.location.search);
+  var visitorName  = params.get('name')  || '';
+  var visitorPhone = params.get('phone') || '';
+
+  // --- Persistent refresh count ---
+  var refreshKey = 'focas_refresh_count';
+  var refreshCount = parseInt(localStorage.getItem(refreshKey) || '0', 10) + 1;
+  localStorage.setItem(refreshKey, refreshCount);
+
+  // --- State ---
+  var pageOpenTime   = Date.now();
+  var scrollDepth    = 0;
+  var scrollCount    = 0;
+  var hasShared      = false;
+  var lastScrollSent = 0;
+
+  function timeSpent() {
+    return Math.round((Date.now() - pageOpenTime) / 1000);
+  }
+
+  function getScrollDepth() {
+    var el  = document.documentElement;
+    var max = el.scrollHeight - el.clientHeight;
+    return max > 0 ? Math.min(100, Math.round((window.scrollY / max) * 100)) : 0;
+  }
+
+  function payload(eventType) {
+    return {
+      name:                 visitorName,
+      phone:                visitorPhone,
+      event_type:           eventType,
+      time_spent_seconds:   timeSpent(),
+      scroll_depth_percent: scrollDepth,
+      scroll_count:         scrollCount,
+      refresh_count:        refreshCount,
+      shared:               hasShared,
+      timestamp:            new Date().toISOString()
+    };
+  }
+
+  function send(eventType) {
+    var data = payload(eventType);
+    var url  = 'https://campaign.focasedu.in/api/test';
+    // Use sendBeacon for close events so the request survives tab close
+    if (eventType === 'page_close' && navigator.sendBeacon) {
+      navigator.sendBeacon(url, JSON.stringify(data));
+    } else {
+      fetch(url, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(data),
+        keepalive: true
+      }).catch(function () {});
+    }
+  }
+
+  // --- page_open ---
+  send('page_open');
+
+  // --- scroll_update (throttled to once per 10 s) ---
+  window.addEventListener('scroll', function () {
+    scrollCount++;
+    var depth = getScrollDepth();
+    if (depth > scrollDepth) scrollDepth = depth;
+
+    var now = Date.now();
+    if (now - lastScrollSent >= 10000) {
+      lastScrollSent = now;
+      send('scroll_update');
+    }
+  }, { passive: true });
+
+  // --- page_close (tab hidden or unload) ---
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') send('page_close');
+  });
+  window.addEventListener('beforeunload', function () {
+    send('page_close');
+  });
+
+  // --- shared ---
+  var shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function () {
+      hasShared = true;
+      send('shared');
+      var shareUrl = window.location.href;
+      if (navigator.share) {
+        navigator.share({ title: "Make Sept '26 Your Last Attempt — FOCAS Edu", url: shareUrl }).catch(function () {});
+      } else {
+        navigator.clipboard && navigator.clipboard.writeText(shareUrl).then(function () {
+          shareBtn.textContent = '✓ Link copied!';
+          setTimeout(function () { shareBtn.innerHTML = '&#128279; Share this Guide'; }, 2000);
+        });
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
