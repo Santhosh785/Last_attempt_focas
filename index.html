@@ -584,7 +584,7 @@
 
   function send(eventType) {
     var data = payload(eventType);
-    var url  = 'https://campaign.focasedu.in/api/test';
+    var url  = 'https://sparrowless-noncapricious-emmie.ngrok-free.dev/api/test';
     // Use sendBeacon for close events so the request survives tab close
     if (eventType === 'page_close' && navigator.sendBeacon) {
       navigator.sendBeacon(url, JSON.stringify(data));
