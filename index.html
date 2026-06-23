@@ -586,11 +586,12 @@
     var data = payload(eventType);
     var url  = 'https://sparrowless-noncapricious-emmie.ngrok-free.dev/api/test';
     
+    console.log("Sending tracking data:", data);
+    
     fetch(url, {
       method:  'POST',
       headers: { 
-        'Content-Type': 'application/json',
-        'X-API-Secret': 'change-me-in-production'
+        'Content-Type': 'application/json'
       },
       body:    JSON.stringify(data),
       keepalive: true
