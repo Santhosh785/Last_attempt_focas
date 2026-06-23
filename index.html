@@ -585,17 +585,16 @@
   function send(eventType) {
     var data = payload(eventType);
     var url  = 'https://sparrowless-noncapricious-emmie.ngrok-free.dev/api/test';
-    // Use sendBeacon for close events so the request survives tab close
-    if (eventType === 'page_close' && navigator.sendBeacon) {
-      navigator.sendBeacon(url, JSON.stringify(data));
-    } else {
-      fetch(url, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(data),
-        keepalive: true
-      }).catch(function () {});
-    }
+    
+    fetch(url, {
+      method:  'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-API-Secret': 'change-me-in-production'
+      },
+      body:    JSON.stringify(data),
+      keepalive: true
+    }).catch(function () {});
   }
 
   // --- page_open ---
