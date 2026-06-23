@@ -556,15 +556,18 @@
   var refreshCount = parseInt(localStorage.getItem(refreshKey) || '0', 10) + 1;
   localStorage.setItem(refreshKey, refreshCount);
 
-  // --- State ---
+  // --- Persistent State across refreshes ---
+  var timeKey = 'focas_total_time';
+  var accumulatedTime = parseInt(localStorage.getItem(timeKey) || '0', 10);
+  
   var pageOpenTime   = Date.now();
-  var scrollDepth    = 0;
-  var scrollCount    = 0;
-  var hasShared      = false;
+  var scrollDepth    = parseInt(localStorage.getItem('focas_max_scroll') || '0', 10);
+  var scrollCount    = parseInt(localStorage.getItem('focas_scroll_count') || '0', 10);
+  var hasShared      = localStorage.getItem('focas_has_shared') === 'true';
   var lastScrollSent = 0;
 
   function timeSpent() {
-    return Math.round((Date.now() - pageOpenTime) / 1000);
+    return accumulatedTime + Math.round((Date.now() - pageOpenTime) / 1000);
   }
 
   function getScrollDepth() {
@@ -628,10 +631,21 @@
   }, { passive: true });
 
   // --- page_close (tab hidden or unload) ---
+  function saveState() {
+    localStorage.setItem(timeKey, timeSpent().toString());
+    localStorage.setItem('focas_max_scroll', scrollDepth.toString());
+    localStorage.setItem('focas_scroll_count', scrollCount.toString());
+    if (hasShared) localStorage.setItem('focas_has_shared', 'true');
+  }
+
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') send('page_close');
+    if (document.visibilityState === 'hidden') {
+      saveState();
+      send('page_close');
+    }
   });
   window.addEventListener('beforeunload', function () {
+    saveState();
     send('page_close');
   });
 
@@ -640,6 +654,7 @@
   if (shareBtn) {
     shareBtn.addEventListener('click', function () {
       hasShared = true;
+      localStorage.setItem('focas_has_shared', 'true');
       send('shared');
       var shareUrl = window.location.href;
       if (navigator.share) {
