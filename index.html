@@ -607,8 +607,16 @@
   send('page_open');
 
   // --- scroll_update (throttled to once per 10 s) ---
+  var scrollTimeout;
   window.addEventListener('scroll', function () {
-    scrollCount++;
+    if (!scrollTimeout) {
+      scrollCount++; // Count distinct scrolling actions
+    }
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      scrollTimeout = null;
+    }, 1000); // 1 second pause means the next scroll is a new action
+
     var depth = getScrollDepth();
     if (depth > scrollDepth) scrollDepth = depth;
 
