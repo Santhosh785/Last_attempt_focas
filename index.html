@@ -618,6 +618,7 @@
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(function() {
       scrollTimeout = null;
+      send('scroll_update'); // capture final depth after scroll idle
     }, 1000); // 1 second pause means the next scroll is a new action
 
     var depth = getScrollDepth();
@@ -638,16 +639,18 @@
     if (hasShared) localStorage.setItem('focas_has_shared', 'true');
   }
 
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-      saveState();
-      send('page_close');
-    }
-  });
-  window.addEventListener('beforeunload', function () {
+  var closeSent = false;
+  function sendClose() {
+    if (closeSent) return;
+    closeSent = true;
     saveState();
     send('page_close');
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') sendClose();
   });
+  window.addEventListener('beforeunload', sendClose);
 
   // --- shared ---
   var shareBtn = document.getElementById('shareBtn');
@@ -680,17 +683,8 @@
   // --- Button click tracking ---
   document.querySelectorAll('a').forEach(function (el) {
     if (el.href.includes('focasedu.com/rti') || el.href.includes('wa.me/916383514285?text=WORKOUT')) {
-      el.addEventListener('click', function(e) {
-        // Only prevent default if we want to ensure sending
-        e.preventDefault();
+      el.addEventListener('click', function() {
         send('rti_button_click');
-        setTimeout(function() {
-          if (el.target === '_blank') {
-            window.open(el.href, '_blank');
-          } else {
-            window.location.href = el.href;
-          }
-        }, 150); // 150ms delay to ensure fetch begins
       });
     }
   });
